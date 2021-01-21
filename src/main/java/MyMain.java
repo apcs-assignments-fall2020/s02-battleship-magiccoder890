@@ -4,7 +4,14 @@ public class MyMain {
     // method also prints out an appropriate message
     public static boolean hit(boolean[][] board, int row, int col) { 
         // YOUR CODE HERE
-        return false;
+        if (board[row][col] == true){
+            System.out.print("There is a boat on that specific point, sorry!");
+            return true;
+        }
+        else {
+            System.out.print("There is no boat on that specific point.");
+            return false;
+        }
     }
 
 
@@ -14,6 +21,16 @@ public class MyMain {
     // by the direction input
     public static boolean[][] placeBoat(boolean[][] board, String direction, int boatLength, int row, int col) { 
         // YOUR CODE HERE
+        if (direction.equals("right")){
+            for (int column = 0; column < boatLength; column++){
+                board[row][col + column] = true;
+            }
+        }
+        if (direction.equals("down")){
+            for (int roww = 0; roww < boatLength; roww++){
+                board[row + roww][col] = true;
+            }
+        }
         return board;
     }
 
@@ -24,6 +41,7 @@ public class MyMain {
     public static boolean inOrder(String[][] words) { 
         // YOUR CODE HERE
         return false;
+        
     }
 
     public static void main(String[] args) {
