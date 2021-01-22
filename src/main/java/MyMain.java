@@ -40,10 +40,22 @@ public class MyMain {
     // You may assume that all Strings are lowercase 
     public static boolean inOrder(String[][] words) { 
         // YOUR CODE HERE
-        return false;
-        
+        int wrong_num = 0;
+        for (int col = 0; col < words.length; col++){
+            for (int row = 0; row < words[0].length -1 ; row++){
+                if (!(words[col][row + 1].length() - words[col][row].length() > 0 && (int)words[col][row + 1].charAt(0) - (int)words[col][row].charAt(0) > 0)) {
+                    wrong_num ++;
+                }
+                
+        }
     }
-
+    if (wrong_num > 0){
+            return false;
+        }
+        else {
+            return true;
+        }
+    }
     public static void main(String[] args) {
         // You can test your code here
     }
